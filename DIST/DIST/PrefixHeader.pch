@@ -1,0 +1,55 @@
+//
+//  PrefixHeader.pch
+//  DIST
+//
+//  Created by zhangjianhua on 15/4/11.
+//  Copyright (c) 2015年 lanou3g. All rights reserved.
+//
+
+#ifndef DIST_PrefixHeader_pch
+#define DIST_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
+
+#define BarColor [UIcolor redColor]
+#define ButtonColor [UIColor colorWithWhite:0 alpha:0.4]
+#define WIDTH self.view.frame.size.width
+#define HEIGHT self.view.frame.size.height
+#define ClassTable_borderColor [UIColor colorWithWhite:0.9 alpha:0.5]
+#define ClassTable_Color [UIColor colorWithWhite:0.2 alpha:0.6]
+#define BACKGROUND_COLOR [UIColor colorFromHexCode:@"#fedcbd"]
+
+// 导航栏, 标签栏基类
+#import "BaseNavigationController.h"
+#import "BaseTabBarController.h"
+#import "BaseViewController.h"
+
+#import "AppDelegate.h"
+#import "MenuViewController.h" // 菜单
+#import "ClassTableViewController.h" // 课表
+#import "ExamViewController.h" // 考试查询
+#import "ScoreListViewController.h" // 成绩查询
+#import "LoginViewController.h" // 登录教务
+#import "AboutViewController.h" // 互动平台
+
+// 第三方
+#import "AFNetworking.h"
+#import "NetHandler.h"
+#import "TFHpple.h"
+#import "MJRefresh.h"
+#import "RSKImageCropViewController.h" // 头像剪切
+
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "SDWebImageManager.h"
+#import "SDImageCache.h"
+
+#import "MBProgressHUD.h"
+#import "RESideMenu.h"
+
+// 自定义封装类
+#import "NetHandler.h"
+#import "UIColor+AddColor.h"

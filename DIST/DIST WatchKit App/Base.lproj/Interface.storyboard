@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--今天-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="i科院课表" id="AgC-eL-Hgc" userLabel="今天" customClass="InterfaceController" colorLabel="IBBuiltInLabel-Red">
+                    <items>
+                        <group width="1" alignment="left" id="81H-ep-Zo7">
+                            <items>
+                                <label alignment="right" verticalAlignment="bottom" text="第9周" id="KRD-0Q-WnR">
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </label>
+                                <label alignment="left" verticalAlignment="bottom" text="星期三" id="lkc-sK-Tu3">
+                                    <fontDescription key="font" type="system" pointSize="18"/>
+                                </label>
+                            </items>
+                        </group>
+                        <table alignment="left" id="5Ot-yE-6mr">
+                            <items>
+                                <tableRow identifier="RowController" id="HpM-BZ-sjp" customClass="RowController">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="prB-7o-TUk">
+                                        <items>
+                                            <label width="28" alignment="left" verticalAlignment="center" textAlignment="center" numberOfLines="0" id="QMa-Mx-mQL">
+                                                <color key="textColor" red="1" green="0.31409589264078541" blue="0.10182751767149933" alpha="1" colorSpace="calibratedRGB"/>
+                                            </label>
+                                            <label alignment="left" text="Label" numberOfLines="0" id="ebk-VK-Jcb"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="ebk-VK-Jcb" id="fCJ-5p-m1t"/>
+                                        <outlet property="label2" destination="QMa-Mx-mQL" id="bM5-nP-JlO"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="1" alignment="center" title="后一天" id="GZB-Sn-cgT">
+                            <connections>
+                                <action selector="rightAction" destination="AgC-eL-Hgc" id="cph-Gw-EnM"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="center" verticalAlignment="center" title="前一天" id="F7N-rS-jam">
+                            <connections>
+                                <action selector="leftAction" destination="AgC-eL-Hgc" id="FTo-Qz-JMR"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="5Ot-yE-6mr" id="Oba-3o-qUQ"/>
+                        <outlet property="weekDayLabel" destination="lkc-sK-Tu3" id="7Rb-62-gML"/>
+                        <outlet property="weekLabel" destination="KRD-0Q-WnR" id="cfM-8U-7fz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="174" y="352"/>
+        </scene>
+        <!--ClassInfoController-->
+        <scene sceneID="RrS-uv-ngD">
+            <objects>
+                <controller identifier="ClassInfoController" id="WfH-MM-Ioe" customClass="ClassInfoInterfaceController">
+                    <items>
+                        <table alignment="left" id="Lu5-Uh-f9J">
+                            <items>
+                                <tableRow identifier="classInfo" selectable="NO" id="XYb-qj-PBW" customClass="ClassInfoRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="YyZ-GE-lwo">
+                                        <items>
+                                            <imageView width="20" height="20" alignment="left" verticalAlignment="center" id="DQp-cB-hYe"/>
+                                            <label width="93" alignment="right" verticalAlignment="center" text="Label" numberOfLines="0" id="uK6-qy-zwi"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="imageView" destination="DQp-cB-hYe" id="b55-cw-SUo"/>
+                                        <outlet property="infoLabel" destination="uK6-qy-zwi" id="vZD-dM-ijs"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="Lu5-Uh-f9J" id="zob-fq-b6g"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="389" y="352"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController">
+                    <items>
+                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="235" y="672"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="235" y="1001"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController"/>
+            </objects>
+            <point key="canvasLocation" x="428" y="1001"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.95686274509803926" green="0.23227451892637696" blue="0.64494629365823541" alpha="1" colorSpace="calibratedRGB"/>
+</document>
